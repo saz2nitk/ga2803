@@ -1,0 +1,227 @@
+ssh -i path_of_pem_file ubuntu@ipaddress
+
+
+chmod 400 path_of_pem_file
+
+Within instance
+sudo mkdir gafolder
+ls -l
+sudo chown ubuntu:ubuntu gafolder
+
+In local
+scp -i creds/ga2103.pem dummy.txt ubuntu@35.154.77.35:/home/ubuntu/gafolder
+
+At times I might want to modify files within server
+We need linux editors
+vim 
+nano
+	Ctrl x
+	
+nano dummypython.py
+edit the files
+ctrl x
+y
+enter
+
+sudo apt-get intall python3-pip
+pip3 install numpy
+
+version control
+git 
+
+Local 
+git init
+git add .
+git status
+git commit -m "message"
+git remote add origin https://github.com/saz2nitk/ga2103.git
+git push origin master
+
+Within ec2
+
+git clone https://github.com/saz2nitk/ga2103.git
+
+Open any editor of choice 
+Spyder 
+Pycharm
+VSCode
+OpenIDE
+
+Given a list of words, find the largest word not greater than length 5.
+a = ['good','a','ram','apple','abrakadabra','Sameer','cat','mango']
+
+Sol 1
+word_list=['apple','abrakadabra','aaabbbcccddee','aabb']
+lar_word=''
+
+for i in word_list:
+    if len(i)<=5:
+        if len(i)>len(lar_word):
+            lar_word=i
+        
+print("The Largest Word is:",lar_word)
+
+
+Sol2
+a=['abcdef','apple','dhjdkhd','dhc','kklc','cc']
+b=[x for x in a if len(x)<=5]
+print(b)
+max_string=max(b, key=len)
+print(max_string)
+
+
+Sol3
+l = 0
+res = []
+for word in words:
+    if len(word)>l and len(word)<=5:
+        res.append(word)
+
+print("Output:",res[0])
+
+
+Sol4
+lista =["good","a","ram","apple","abrakadabra","sameer","cat","mango"]
+
+for val in lista:
+    word = val.split()
+    if len(val) == 5:
+        print(val)
+
+
+Sol5
+a = ['good','a','ram','apple','abrakadabra','Sameer','cat','mango']
+
+def lt5(s):
+    if len(s)<=5: 
+        return True
+    return False
+    
+a_sorted =  sorted(filter(lt5, a), key=len)
+
+print(a_sorted[-1])
+
+
+Sol6
+def largest(list):
+    answer=[]
+    for i in list:
+        if len(i)>=0 and len(i)<=5:
+            answer.append(i)
+    return answer[0]
+
+longetword = ''
+for i in a:
+    if len(i)<=5:
+        print(i)
+        if len(i)>len(longetword):
+            longetword = i
+print('longest word with length lessthan 5 char is:',longetword)
+
+
+def largest(list):
+    largest= [i for i in list if len(i)>0 and len(i)<=5]
+    return largest[0]
+largest(['Apple','Hello','Jules'])
+
+
+lista =["good","a","ram","apple","abrakadabra","sameer","cat","mango"]
+
+def largest_number(list):
+	""" Find the largest word not greater than 5.
+	
+	Input:
+		list: a list of string
+	Output:
+		var2: a string
+	"""
+    word = []
+    for words in list:
+        if len(words) == 5:
+            word.append(words)
+    print(word[0])
+
+largest_number(lista)
+
+
+
+Problems with the code
+No comments
+Not using lambda function 
+Modular
+Problem with the logic
+Exceptions not handled
+Hardcoded input
+Use of fucntions
+Code explainability is an issue
+lambda
+reusability by writing reusable functions/classes to solve smaller subparts of the problem statement
+Docstring - A doc string should specify all the functionalities of a method/class without any additional need of a comment generally
+
+good things
+It works
+variable names
+lambda 
+
+pep8
+pep257
+
+Explainability
+	- ML models-- Lime, Shap values, Explainx.ai
+	- Prpgram explainbility
+
+g = lambda x,y: x+y 
+def g(x,y):
+	z = x + y
+	return z
+
+a = [1,3,4,5]
+def getSq(x):
+	return x**2
+
+b = []
+for i in a:
+		b.append(getSq(i))
+print(b)
+
+b = list(map(lambda x: x**2,a))
+
+
+X --> y
+
+horizontal scalability - is always preferred and easier to implement
+vertical scalability
+
+def divNum(a,b):
+	try:
+		z = a/b
+	except ZeroDivisionError as e:
+		print('Please pass non-zero denomitor')
+		return
+	except TypeError as e2:
+		print('Please pass numbers as arguments')
+		return
+	return z
+
+divNum(3,0)
+divNum('apple','mango')
+
+Exception handling is deigned to handle only known exception
+
+a = True
+if a==True:
+if a:
+if not a:
+
+
+
+
+
+
+
+
+
+
+
+
+
