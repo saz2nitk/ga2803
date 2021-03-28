@@ -8,8 +8,8 @@ Created on Sun Mar 28 15:09:04 2021
 class ReadArticles:
     
     def __init__(self):
-        self.dataPath = r'D:\Academia\Learning\GreyAtom\ga2803\data\train\article1.txt'
-        self.stopWordPath = r'D:\Academia\Learning\GreyAtom\ga2803\data\stopWords.txt'
+        self.dataPath = r'data\train\article1.txt'
+        self.stopWordPath = r'data\stopWords.txt'
             
     def loadArticlesFromFile(self):
         with open(self.dataPath,'r') as fl:

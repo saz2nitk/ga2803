@@ -213,6 +213,56 @@ if a==True:
 if a:
 if not a:
 
+To start a project
+initialize with github
+commit and push to remote rep
+pull/clone it in within aws instance 
+Run
+
+sudo git clone https://github.com/saz2nitk/ga2803.git
+
+Text summarisation
+Problem: Given a large text, build an application (as an api) which summarizes the text.
+Logic: 1. Select the first sentence always
+		2. Select the top 5 other sentence.
+		
+Problem --> a combination of sub problem --> multiple task --> group these tasks --> implement these tasks as functions/classes/modules -->i/o
+
+Tasks
+1. read/load the data
+2. Prep-process
+	a. Sentence tokenizer
+	b. word_tokenizer
+	c. stop-word removal
+	d. remove special char
+	e. convert to lower case
+
+3. Core logic (Summarise)
+	a. split into sentence
+	b. create first sentence and rest of the sentence
+	c. find length of sentence
+	d. sort the sentences based on legth
+	e. identify the top 5 sentence
+	f. Combine first and top 5 sentence
+	g. Return summary
+	
+Making a plan for the projects is v imp before starting 
+virtualenv
+virtualenv, conda env, venv
+virtualenv itself is a python library
+python3 -m virtualenv summaryenv
+summaryenv/bin/pip3 install -r requirements.txt
+summaryenv/bin/python3 bin/summarize.py
+
+Two environments
+
+	- main system env
+		what you install here (by writing pip3 install is not intalled in any virtualenv)
+	- a virtual env called as summaryenv
+		what you install here (by writing summary/bin/pip3 install numpy) is not installed in main python
+		
+
+	
 
 
 
