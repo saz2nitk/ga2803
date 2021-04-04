@@ -26,6 +26,6 @@ def printCustomTextLower():
 #    text = json.loads(text)
     text = json.loads(request.data.decode())['textData']
     #print(text)
-    return text.lower()
+    return text.split()[3]
 
 app.run(host='127.0.0.1',port=8080)
