@@ -278,6 +278,20 @@ Bottle
 
 pip install flask
 
+sudo docker ps -a
+sudo docker images
+sudo docker search ubuntu
+sudo docker pull ubuntu
+sudo docker run hello-world
+
+Local -- your own machine where docker is instlled
+Remote -- dockerhub
+pull command is to pull the docker image from remote to local
+
+sudo docker build -t myfirstimage:0.1 dockerfiles/dummydocker
+sudo docker run --rm --name myfirstcont myfirstimage:0.1
+
+
 	
 
 
