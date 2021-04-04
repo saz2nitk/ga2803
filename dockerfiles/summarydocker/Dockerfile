@@ -10,4 +10,4 @@ RUN git clone https://github.com/saz2nitk/ga2803.git
 RUN cd ga2803
 RUN pip3 install -r ga2803/requirements.txt
 
-CMD ["python3","bin/summarize.py"]
+CMD ["python3","ga2803/bin/summarize.py"]
