@@ -9,6 +9,7 @@ from preProcessor import PreprocessText
 import flask
 from flask import Flask, request
 import json
+import tweepy
 
 summaryApp = Flask(__name__)
 

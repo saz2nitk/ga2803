@@ -11,3 +11,6 @@ RUN cd ga2803
 RUN pip3 install -r ga2803/requirements.txt
 
 CMD ["python3","ga2803/bin/summarize.py"]
+
+# sudo docker build -t summaryimage:0.1 dockerfiles/summarydocker
+

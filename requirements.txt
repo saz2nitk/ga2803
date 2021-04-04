@@ -2,3 +2,4 @@ numpy==1.19
 pandas
 nltk
 flask
+tweepy
