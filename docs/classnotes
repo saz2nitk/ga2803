@@ -290,6 +290,20 @@ pull command is to pull the docker image from remote to local
 
 sudo docker build -t myfirstimage:0.1 dockerfiles/dummydocker
 sudo docker run --rm --name myfirstcont myfirstimage:0.1
+sudo docker run --rm -it --name myfirstcont myfirstimage:0.1
+sudo docker build -t summaryimage:0.1 dockerfiles/summarydocker
+sudo docker run --rm --name myfirstcont summaryimage:0.1
+
+sudo docker start myfirstcont
+sudo docker stop myfirstcont
+
+sudo docker exec -it myfirstcont bash # exec will on work if container is up
+
+sudo docker login
+sudo docker tag summaryimage:0.1 saz2nitk/summaryimage
+sudo docker push saz2nitk/summaryimage
+
+
 
 
 	

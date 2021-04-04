@@ -52,6 +52,14 @@ class SummarizeArticle:
 #    summary = summaryObj.summarize()
 #    return summary
 #    #print('The summary is:\n\n{}'.format(summary))
+        
+@summaryApp.route('/home',methods=['GET'])
+def printYay():
+    return "Yay!! the api is fine !!!"
+
+@summaryApp.route('/home/work',methods=['GET'])
+def printWork():
+    return "I am going to work"
     
 @summaryApp.route('/home/summary/custom',methods=['POST'])     
 def summaryApi():
@@ -61,7 +69,7 @@ def summaryApi():
     return summary
     #print('The summary is:\n\n{}'.format(summary))
 
-summaryApp.run('127.0.0.1','8000')
+summaryApp.run('0.0.0.0','8000')
             
     
     
