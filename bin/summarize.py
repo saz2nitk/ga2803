@@ -8,14 +8,15 @@ import numpy
 from preProcessor import PreprocessText
 import flask
 from flask import Flask, request
+import json
 
 summaryApp = Flask(__name__)
 
 class SummarizeArticle:
     
-    def __init__(self):
+    def __init__(self,article):
         processObj = PreprocessText()
-        self.sentArray = processObj.preprocess()
+        self.sentArray = processObj.preprocess(article)
     
     def groupSentences(self,sentArray):
         
@@ -44,9 +45,17 @@ class SummarizeArticle:
         summary = self.combineSentences(firstSent,sortedSentences)
         return summary
 
-@summaryApp.route('/home/summary',methods=['GET'])     
+#@summaryApp.route('/home/summary/default',methods=['GET'])     
+#def summaryApi():
+#    summaryObj = SummarizeArticle()
+#    summary = summaryObj.summarize()
+#    return summary
+#    #print('The summary is:\n\n{}'.format(summary))
+    
+@summaryApp.route('/home/summary/custom',methods=['POST'])     
 def summaryApi():
-    summaryObj = SummarizeArticle()
+    article = json.loads(request.data.decode())['articleText']
+    summaryObj = SummarizeArticle(article)
     summary = summaryObj.summarize()
     return summary
     #print('The summary is:\n\n{}'.format(summary))
